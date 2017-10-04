@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        kotlinVersion = '1.1.51'
+        gradleVersionsPlugin = '0.15.0'
+    }
+
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'com.android.tools.build:gradle:3.0.0-beta7'
+        classpath 'com.google.gms:oss-licenses:0.9.1'
+
+        // Run "./gradlew dependencyUpdates -Drevision=release" to check for library updates using this plugin
+        classpath "com.github.ben-manes:gradle-versions-plugin:$gradleVersionsPlugin"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task runAllTests(dependsOn: ['runUnitTests', 'runInstrumentationTests']) {
+    description 'Run all tests'
+}
+
+task runUnitTests(dependsOn: [':app:testDebugUnitTest']) {
+    description 'Run all unit tests'
+}
+
+task runInstrumentationTests(dependsOn: [':app:connectedDebugAndroidTest']) {
+    description 'Run all instrumentation tests'
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/action_filter_create"
+            android:title="@string/menu_filter_option_create"
+            android:icon="@drawable/ic_create"
+            app:actionViewClass="android.support.v7.widget.AppCompatCheckBox" />
+
+        <item
+            android:id="@+id/action_filter_delete"
+            android:title="@string/menu_filter_option_delete"
+            android:icon="@drawable/ic_delete"
+            app:actionViewClass="android.support.v7.widget.AppCompatCheckBox" />
+
+        <item
+            android:id="@+id/action_filter_fork"
+            android:title="@string/menu_filter_option_fork"
+            android:icon="@drawable/ic_fork"
+            app:actionViewClass="android.support.v7.widget.AppCompatCheckBox" />
+
+        <item
+            android:id="@+id/action_filter_pull_request"
+            android:title="@string/menu_filter_option_pull_request"
+            android:icon="@drawable/ic_pull_request"
+            app:actionViewClass="android.support.v7.widget.AppCompatCheckBox" />
+
+        <item
+            android:id="@+id/action_filter_push"
+            android:title="@string/menu_filter_option_push"
+            android:icon="@drawable/ic_push"
+            app:actionViewClass="android.support.v7.widget.AppCompatCheckBox" />
+
+        <item
+            android:id="@+id/action_filter_watch"
+            android:title="@string/menu_filter_option_watch"
+            android:icon="@drawable/ic_watch"
+            app:actionViewClass="android.support.v7.widget.AppCompatCheckBox" />
+
+    </group>
+
+</menu>

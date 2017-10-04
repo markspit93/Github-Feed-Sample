@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="together"
+    android:interpolator="@android:interpolator/accelerate_cubic">
+
+    <slide
+        android:duration="400"
+        android:slideEdge="top">
+
+        <targets>
+            <target android:targetId="@id/appBarLayout" />
+        </targets>
+
+    </slide>
+
+    <transitionSet android:transitionOrdering="together">
+
+        <slide
+            android:duration="400"
+            android:startDelay="100"
+            android:slideEdge="bottom" />
+
+        <fade
+            android:duration="200"
+            android:fadingMode="fade_out" />
+
+        <targets>
+            <target android:targetId="@id/cardInfo" />
+            <target android:targetId="@id/cardRepo" />
+            <target android:targetId="@id/cardOrg" />
+        </targets>
+
+    </transitionSet>
+
+</transitionSet>

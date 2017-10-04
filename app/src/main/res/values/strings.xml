@@ -1,0 +1,45 @@
+<resources>
+
+    <string name="app_name">Github Feed</string>
+
+    <string name="event_none">No Type</string>
+    <string name="event_create">Create</string>
+    <string name="event_delete">Delete</string>
+    <string name="event_fork">Fork</string>
+    <string name="event_push">Push</string>
+    <string name="event_pull_request">Pull Request</string>
+    <string name="event_watch">Watch</string>
+
+    <string name="menu_filter_title">Filter Events</string>
+    <string name="menu_filter_option_create">Create</string>
+    <string name="menu_filter_option_fork">Fork</string>
+    <string name="menu_filter_option_delete">Delete</string>
+    <string name="menu_filter_option_pull_request">Pull Request</string>
+    <string name="menu_filter_option_push">Push</string>
+    <string name="menu_filter_option_watch">Watch</string>
+    <string name="menu_licenses">Licenses</string>
+
+    <string name="details_info_title">Info</string>
+    <string name="details_info_type">Type: %s</string>
+    <string name="details_info_public">Public: %s</string>
+    <string name="details_info_date">Date: %s</string>
+
+    <string name="details_repo_title">Repository</string>
+    <string name="details_repo_id">ID: %s</string>
+    <string name="details_repo_name">Name: %s</string>
+    <string name="details_repo_url">Url: %s</string>
+
+    <string name="details_org_title">Organization</string>
+    <string name="details_org_id">ID: %s</string>
+    <string name="details_org_url">Url: %s</string>
+
+    <string name="error_rate_limit">Rate limit exceeded. Try again later.</string>
+    <string name="error_loading_events">Something has gone wrong.</string>
+    <string name="error_no_internet">No internet connection</string>
+
+    <string name="unavailable">Unavailable</string>
+    <string name="loading">Loading…</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>

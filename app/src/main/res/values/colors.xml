@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#333333</color>
+    <color name="colorPrimaryDark">#141414</color>
+
+    <color name="red_A200">#FF5252</color>
+    <color name="red_A400">#FF1744</color>
+
+    <color name="purple_A200">#E040FB</color>
+    <color name="purple_A400">#D500F9</color>
+
+    <color name="deep_purple_A200">#7C4DFF</color>
+    <color name="deep_purple_A400">#651FFF</color>
+
+    <color name="indigo_A400">#3D5AFE</color>
+    <color name="indigo_A700">#304FFE</color>
+
+    <color name="green_A400">#76FF03</color>
+    <color name="green_A700">#00C853</color>
+
+    <color name="orange_A400">#FF9100</color>
+    <color name="orange_A700">#FF6D00</color>
+
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_800">#424242</color>
+
+    <color name="white_semi_transparent">#A0FFFFFF</color>
+
+    <integer-array name="progressBarColors">
+        <item>@color/red_A400</item>
+        <item>@color/deep_purple_A400</item>
+        <item>@color/green_A700</item>
+        <item>@color/indigo_A700</item>
+        <item>@color/orange_A700</item>
+    </integer-array>
+
+</resources>
