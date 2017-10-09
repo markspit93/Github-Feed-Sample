@@ -1,8 +1,9 @@
 Github Feed Sample
 ======
 
-A sample Android app which showcases advanced usage of Kotlin, Dagger2, Retrofit2, RxJava2, and some Architecture Components.
-The diagram below demonstrates how the MVP architecture was used to achieve this:
+A sample Android app which retrieves realtime Github events and categorizes them into different lists. Clicking an item in these lists will take you to a screen with more details on the event.
+
+The app showcases advanced usage of Kotlin, Dagger2, Retrofit2, RxJava2, and some Architecture Components. The diagram below demonstrates how the MVP architecture was used to achieve this:
 
 ![App Architecture Diagram](mvp_diagram.png)
 
