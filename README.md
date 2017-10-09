@@ -39,7 +39,7 @@ To run them use the following Gradle tasks:
  * Mockito - https://github.com/mockito/mockito
  * MockWebServer - https://github.com/square/okhttp/tree/master/mockwebserver
  * Retrofit - https://github.com/square/retrofit/
- * Roboelectic - https://github.com/robolectric/robolectric
+ * Robolectric - https://github.com/robolectric/robolectric
  * RxJava - https://github.com/ReactiveX/RxJava
  * SmoothProgressBar - https://github.com/castorflex/SmoothProgressBar
  * Stetho - https://github.com/facebook/stetho
