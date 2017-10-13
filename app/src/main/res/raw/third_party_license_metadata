@@ -30,9 +30,9 @@
 1453:46 support-media-compat
 1501:46 support-core-utils
 1549:46 support-compat
-1693:46 runtime
-1741:46 common
-1789:92 gifdecoder
+1645:46 runtime
+1835:46 common
+1741:92 gifdecoder
 1883:46 support-annotations
 1931:46 constraint-layout-solver
 1979:19442 ICU4C
@@ -57,7 +57,8 @@
 59881:46 dagger-android-processor
 59929:46 javapoet
 59977:46 dagger-producers
-60025:46 dagger-android-jarimpl
-60073:46 dagger-android-support-jarimpl
-60121:43 javac
-60166:46 stetho-no-op
+60025:51 jsr250-api
+60078:46 dagger-android-jarimpl
+60126:46 dagger-android-support-jarimpl
+60174:43 javac-shaded
+60219:46 stetho-no-op
