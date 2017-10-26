@@ -46,6 +46,11 @@ class MainActivity : BaseActivity() {
         setupFilters()
     }
 
+    override fun onStart() {
+        super.onStart()
+        setTaskColor(getColorCompat(R.color.colorPrimary))
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         menu.findItem(R.id.menu_item_filter).isVisible = hasInternetConnection()

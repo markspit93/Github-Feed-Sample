@@ -28,7 +28,7 @@ class EventListFragment : MvpFragment<EventListContract.View, EventListPresenter
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        if (context.hasInternetConnection()) {
+        if (context!!.hasInternetConnection()) {
             recyclerView.adapter = adapter
             recyclerView.setHasFixedSize(true)
         } else {

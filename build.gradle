@@ -3,7 +3,7 @@
 buildscript {
     ext {
         kotlinVersion = '1.1.51'
-        gradleVersionsPlugin = '0.15.0'
+        gradleVersionsPlugin = '0.17.0'
     }
 
     repositories {
@@ -13,7 +13,7 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath 'com.android.tools.build:gradle:3.0.0-beta7'
+        classpath 'com.android.tools.build:gradle:3.0.0'
         classpath 'com.google.gms:oss-licenses:0.9.1'
 
         // Run "./gradlew dependencyUpdates -Drevision=release" to check for library updates using this plugin

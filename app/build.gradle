@@ -6,13 +6,13 @@ apply plugin: 'com.google.gms.oss.licenses.plugin'
 apply plugin: 'com.github.ben-manes.versions'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.0"
 
     defaultConfig {
         applicationId "com.github.feed.sample"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -48,11 +48,11 @@ android {
 }
 
 ext {
-    anko_version = '0.10.1'
+    anko_version = '0.10.2'
 
-    supportLibVersion = '26.1.0'
+    supportLibVersion = '27.0.0'
     constraintLayoutVersion = '1.1.0-beta3'
-    archComponentsVersion = '1.0.0-beta2'
+    archComponentsVersion = '1.0.0-rc1'
     smoothProgressBarVersion = "1.1.0"
     playServicesVersion = '11.4.2'
     retrofit2Version = '2.3.0'
@@ -65,9 +65,9 @@ ext {
     stethoNoOpVersion = '1.1'
 
     junitVersion = '4.12'
-    mockitoVersion = '2.10.0'
+    mockitoVersion = '2.11.0'
     mockitoKotlinVersion = '1.5.0'
-    robolectricVersion = '3.4.2'
+    robolectricVersion = '3.5'
     mockWebServerVersion = '3.9.0'
     supportTestVersion = '1.0.1'
     espressoVersion = '3.0.1'

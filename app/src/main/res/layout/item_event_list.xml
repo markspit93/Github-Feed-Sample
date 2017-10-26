@@ -14,7 +14,7 @@
         android:textSize="28sp"
         tools:text="Pull Requests" />
 
-    <com.github.feed.sample.ui.common.view.CustomRecyclerView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/eventRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

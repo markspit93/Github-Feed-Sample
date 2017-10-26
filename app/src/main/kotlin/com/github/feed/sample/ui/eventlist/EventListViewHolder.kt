@@ -40,7 +40,7 @@ class EventListViewHolder(itemView: View, private val eventClick: (Event) -> Uni
             setHasFixedSize(true)
             smoothScrollToPosition(0)
 
-            if (getItemDecorationCount() == 0) {
+            if (itemDecorationCount == 0) {
                 addItemDecoration(EventItemDecoration(context))
             }
         }
