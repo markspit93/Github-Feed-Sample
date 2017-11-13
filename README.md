@@ -13,6 +13,10 @@ The Repository in this sample app retrieves only remote data from a server, but 
 
 I am aware that the fragment was completely unecessary for this simple app. It is there to demonstrate how fragments would work in more complex apps. Although many developers are against fragments, I believe that when used correctly they can be advantageous.
 
+<p align="center">
+    <img width="300" height="500" src="https://dl2.pushbulletusercontent.com/A6nbpb1d1F0u7V8318Y5e9FbwDVDAeNv/20171113_153357.gif">
+</p>
+
 Usage
 ======
 
