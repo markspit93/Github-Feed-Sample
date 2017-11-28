@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'io.objectbox'
 apply plugin: 'com.google.gms.oss.licenses.plugin'
 apply plugin: 'com.github.ben-manes.versions'
 
@@ -48,15 +49,15 @@ android {
 }
 
 ext {
-    anko_version = '0.10.2'
+    anko_version = '0.10.3'
 
     supportLibVersion = '27.0.1'
     constraintLayoutVersion = '1.1.0-beta3'
     archComponentsVersion = '1.0.0'
     smoothProgressBarVersion = "1.1.0"
-    playServicesVersion = '11.6.0'
+    playServicesVersion = '11.6.2'
     retrofit2Version = '2.3.0'
-    rxJavaVersion = '2.1.6'
+    rxJavaVersion = '2.1.7'
     rxAndroidVersion = '2.0.1'
     daggerVersion = '2.13'
     glideVersion = '4.3.1'
@@ -75,8 +76,8 @@ ext {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
 
@@ -99,6 +100,9 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit2Version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2Version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version"
+
+    implementation "io.objectbox:objectbox-android:$objectboxVersion"
+    implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
 
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.os.StrictMode
 import com.facebook.stetho.Stetho
+import com.github.feed.sample.di.AppModule
 import com.github.feed.sample.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -28,7 +29,7 @@ class App : Application(), HasActivityInjector {
     private fun initDagger() {
         DaggerAppComponent
                 .builder()
-                .application(this)
+                .appModule(AppModule(this))
                 .build()
                 .inject(this)
     }

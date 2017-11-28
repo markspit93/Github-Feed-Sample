@@ -2,18 +2,24 @@
 
 buildscript {
     ext {
-        kotlinVersion = '1.1.61'
+        androidToolsVersion = '3.0.1'
+        kotlinVersion = '1.2.0'
+        objectboxVersion = '1.3.0'
+        ossLicensesVersion = '0.9.1'
         gradleVersionsPlugin = '0.17.0'
     }
 
     repositories {
         jcenter()
         google()
+        maven { url "http://objectbox.net/beta-repo/" }
     }
+
     dependencies {
+        classpath "com.android.tools.build:gradle:$androidToolsVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.google.gms:oss-licenses:0.9.1'
+        classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
+        classpath "com.google.gms:oss-licenses:$ossLicensesVersion"
 
         // Run "./gradlew dependencyUpdates -Drevision=release" to check for library updates using this plugin
         classpath "com.github.ben-manes:gradle-versions-plugin:$gradleVersionsPlugin"
@@ -24,6 +30,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url "http://objectbox.net/beta-repo/" }
     }
 }
 
