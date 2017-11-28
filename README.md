@@ -9,7 +9,7 @@ The app showcases advanced usage of Kotlin, Dagger2, Retrofit2, RxJava2, and som
 
 As seen above, the architecture used is not pure MVP since it includes a ViewModel between the Presenter and Model (the repository).
 This is the ViewModel provided by Android's Architecture Components. It's used to hold data from the repository in memory which can persist device configuration changes such as rotation.
-The Repository in this sample app retrieves only remote data from a server, but it can easily have a local data source added via ORMs such as Room, Realm or Object Box.
+The Repository in this sample app retrieves only remote data from a server, but it can easily have a local data source added via mobile databases such as Room, Realm or Object Box.
 
 I am aware that the fragment was completely unecessary for this simple app. It is there to demonstrate how fragments would work in more complex apps. Although many developers are against fragments, I believe that when used correctly they can be advantageous.
 
