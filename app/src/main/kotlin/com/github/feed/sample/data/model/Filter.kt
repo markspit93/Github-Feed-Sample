@@ -11,7 +11,7 @@ data class Filter(
         var id: Long = 0,
 
         @Index
-        val name: String,
+        val tag: String,
 
         var checked: Boolean
 )

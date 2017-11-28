@@ -12,7 +12,8 @@ import com.github.feed.sample.R
 import com.github.feed.sample.data.*
 import com.github.feed.sample.data.model.Event
 import com.github.feed.sample.ext.*
-import com.github.feed.sample.ui.common.BaseActivity
+import com.github.feed.sample.ui.common.mvp.MvpActivity
+import com.github.feed.sample.ui.common.mvp.NoViewModel
 import com.github.feed.sample.ui.details.DetailsActivity
 import com.github.feed.sample.ui.eventlist.EventListFragment
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.jetbrains.anko.intentFor
 
-class MainActivity : BaseActivity() {
+class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(), MainContract.View {
 
     companion object {
         private val FRAGMENT_TAG_EVENTS = "fragment_tag_events"
@@ -79,6 +80,10 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    override fun selectFilter(tag: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     private fun setupFilters() {
         setupCheckBox(R.id.action_filter_create, R.color.orange_A400, EVENT_CREATE)
         setupCheckBox(R.id.action_filter_delete, R.color.purple_A200, EVENT_DELETE)
@@ -95,6 +100,7 @@ class MainActivity : BaseActivity() {
 
     private fun setupCheckBox(@IdRes checkboxId: Int, @ColorRes colorId: Int, eventType: String) {
         navigationView.findCheckbox(checkboxId).apply {
+            tag = eventType
             isChecked = true
             setButtonTintColor(colorId)
             setOnCheckedChangeListener { _, isChecked ->

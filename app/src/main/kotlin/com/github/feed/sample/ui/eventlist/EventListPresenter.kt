@@ -27,7 +27,7 @@ class EventListPresenter @Inject constructor() : MvpPresenter<EventListContract.
             override fun onComplete() {}
         }
 
-        viewModel.getEvents().subscribe(subscriber)
+        getViewModel().getEvents().subscribe(subscriber)
         addObservables(subscriber)
     }
 }

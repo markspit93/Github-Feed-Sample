@@ -6,10 +6,13 @@ interface MainContract {
 
     interface View : MvpView {
 
+        fun selectFilter(tag: String)
     }
 
     interface Presenter {
 
-        fun saveFilterSelection(filter: String, checked: Boolean)
+        fun loadFilterSelections()
+
+        fun saveFilterSelection(tag: String, checked: Boolean)
     }
 }
