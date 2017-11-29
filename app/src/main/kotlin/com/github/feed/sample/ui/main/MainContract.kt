@@ -6,7 +6,7 @@ interface MainContract {
 
     interface View : MvpView {
 
-        fun selectFilter(tag: String)
+        fun selectFilter(tag: String, selected: Boolean)
     }
 
     interface Presenter {

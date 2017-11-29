@@ -8,7 +8,6 @@ import com.github.feed.sample.R
 import com.github.feed.sample.data.*
 import com.github.feed.sample.data.model.Event
 import com.github.feed.sample.data.model.EventList
-import com.github.feed.sample.util.debugLog
 
 class EventListAdapter(private val eventClick: (Event) -> Unit) : RecyclerView.Adapter<EventListViewHolder>() {
 
@@ -85,7 +84,6 @@ class EventListAdapter(private val eventClick: (Event) -> Unit) : RecyclerView.A
 
         items.forEach {
             if (it.type == type) {
-                debugLog("LOL " + it.type)
                 filteredItems.add(0, it)
                 notifyItemInserted(0)
                 return

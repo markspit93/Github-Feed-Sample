@@ -28,6 +28,7 @@ class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(
     }
 
     private var eventsFragment: EventListFragment? = null
+    private var checkBoxList = mutableListOf<CheckBox>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +50,7 @@ class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(
 
     override fun onStart() {
         super.onStart()
+        presenter.loadFilterSelections()
         setTaskColor(getColorCompat(R.color.colorPrimary))
     }
 
@@ -80,8 +82,8 @@ class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(
         }
     }
 
-    override fun selectFilter(tag: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun selectFilter(tag: String, selected: Boolean) {
+        checkBoxList.find { it.tag as String == tag }?.isChecked = selected
     }
 
     private fun setupFilters() {
@@ -100,10 +102,14 @@ class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(
 
     private fun setupCheckBox(@IdRes checkboxId: Int, @ColorRes colorId: Int, eventType: String) {
         navigationView.findCheckbox(checkboxId).apply {
+            checkBoxList.add(this)
+
             tag = eventType
             isChecked = true
             setButtonTintColor(colorId)
             setOnCheckedChangeListener { _, isChecked ->
+                presenter.saveFilterSelection(tag as String, isChecked)
+
                 if (isChecked) {
                     requireNotNull(eventsFragment).unfilterEventType(eventType)
                 } else {
