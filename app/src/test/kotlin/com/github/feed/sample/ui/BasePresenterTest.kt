@@ -10,7 +10,7 @@ import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
 @Config(manifest = Config.NONE)
-abstract class BasePresenterTest<VIEW : MvpView, PRESENTER : MvpPresenter<VIEW, VIEWMODEL>, VIEWMODEL : ViewModel> {
+abstract class BasePresenterTest<VIEW : MvpView, out PRESENTER : MvpPresenter<VIEW, VIEWMODEL>, VIEWMODEL : ViewModel> {
 
     private lateinit var presenter: PRESENTER
     abstract var view: VIEW
@@ -21,7 +21,7 @@ abstract class BasePresenterTest<VIEW : MvpView, PRESENTER : MvpPresenter<VIEW, 
     }
 
     protected fun setViewModel(viewModel: VIEWMODEL) {
-        presenter.viewModel = viewModel
+        presenter.setViewModel(viewModel)
 
         @Suppress("UNCHECKED_CAST")
         presenter.attachView(view)
