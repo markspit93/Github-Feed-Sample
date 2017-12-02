@@ -1,23 +1,32 @@
 package com.github.feed.sample.ui
 
 import android.arch.lifecycle.ViewModel
+import com.github.feed.sample.data.model.MyObjectBox
 import com.github.feed.sample.ui.common.mvp.MvpPresenter
 import com.github.feed.sample.ui.common.mvp.MvpView
+import io.objectbox.BoxStore
+import org.junit.After
 import org.junit.Before
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
+import java.io.File
 
-@RunWith(RobolectricTestRunner::class)
-@Config(manifest = Config.NONE)
-abstract class BasePresenterTest<VIEW : MvpView, out PRESENTER : MvpPresenter<VIEW, VIEWMODEL>, VIEWMODEL : ViewModel> {
+abstract class BasePresenterTest<VIEW : MvpView, PRESENTER : MvpPresenter<VIEW, VIEWMODEL>, VIEWMODEL : ViewModel> {
 
-    private lateinit var presenter: PRESENTER
+    lateinit var presenter: PRESENTER
     abstract var view: VIEW
+    open lateinit var boxStore: BoxStore
 
     @Before
-    fun setUp() {
+    fun setup() {
+        val tempFile = File.createTempFile("object-store-test", "").apply { delete() }
+        boxStore = MyObjectBox.builder().directory(tempFile).build()
+
         presenter = createPresenter()
+    }
+
+    @After
+    fun tearDown() {
+        boxStore.close()
+        boxStore.deleteAllFiles()
     }
 
     protected fun setViewModel(viewModel: VIEWMODEL) {

@@ -18,7 +18,7 @@ abstract class BaseRemoteDataSourceTest<in SERVICE : Any, DATASOURCE : Any>(priv
     protected lateinit var remoteDataSource: DATASOURCE
 
     @Before
-    fun setUp() {
+    fun setup() {
         mockWebServer = MockWebServer().apply { start(0) }
 
         serviceGenerator.create(mockWebServer.url("/").toString(), serviceClass).apply {

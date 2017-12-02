@@ -14,11 +14,11 @@
 701:46 extensions
 749:47 play-services-oss-licenses
 798:92 glide
-892:46 objectbox-kotlin
-940:46 rxandroid
-988:46 rxjava
-1036:46 dagger-android
-1084:46 dagger
+892:46 rxandroid
+940:46 rxjava
+988:46 dagger-android
+1036:46 dagger
+1084:46 objectbox-kotlin
 1132:46 objectbox-java
 1180:54 stetho
 1236:46 jsr305

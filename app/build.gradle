@@ -51,7 +51,7 @@ android {
 ext {
     anko_version = '0.10.3'
 
-    supportLibVersion = '27.0.1'
+    supportLibVersion = '27.0.2'
     constraintLayoutVersion = '1.1.0-beta3'
     archComponentsVersion = '1.0.0'
     smoothProgressBarVersion = "1.1.0"
@@ -68,7 +68,6 @@ ext {
     junitVersion = '4.12'
     mockitoVersion = '2.12.0'
     mockitoKotlinVersion = '1.5.0'
-    robolectricVersion = '3.5.1'
     mockWebServerVersion = '3.9.1'
     supportTestVersion = '1.0.1'
     espressoVersion = '3.0.1'
@@ -101,9 +100,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2Version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version"
 
-    implementation "io.objectbox:objectbox-android:$objectboxVersion"
-    implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
-
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 
@@ -115,11 +111,21 @@ dependencies {
     debugImplementation "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
     releaseImplementation "net.igenius:stetho-no-op:$stethoNoOpVersion"
 
+    implementation "io.objectbox:objectbox-android:$objectboxVersion"
+    implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
+
+    // Object Box Test Dependencies
+    // Currently not available for Mac
+    if (isLinux64) {
+        testImplementation "io.objectbox:objectbox-linux:$objectboxVersion"
+    } else if (isWindows64) {
+        testImplementation "io.objectbox:objectbox-windows:$objectboxVersion"
+    }
+
     // Unit Testing Dependencies
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "com.nhaarman:mockito-kotlin:$mockitoKotlinVersion"
-    testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
 
     // Instrumentation Testing Dependencies

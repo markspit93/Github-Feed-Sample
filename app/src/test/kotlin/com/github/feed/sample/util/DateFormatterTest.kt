@@ -1,7 +1,7 @@
 package com.github.feed.sample.util
 
 import android.content.Context
-import org.hamcrest.Matchers.`is`
+import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
