@@ -32,6 +32,8 @@ To run them use the following Gradle tasks:
  * runUnitTests
  * runInstrumentationTests
  
+ **Important:** The unit tests involving ObjectBox (MainPresenterTest and LocalFilterDataSourceTest) will fail on MacOS due to a           temporary library limitation.
+ 
  Libraries
  ======
  
