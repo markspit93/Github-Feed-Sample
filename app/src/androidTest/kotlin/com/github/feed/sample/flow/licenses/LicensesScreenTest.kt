@@ -26,6 +26,6 @@ class LicensesScreenTest : BaseInstrumentationTest<MainActivity>(MainActivity::c
         clickViewWithText(R.string.menu_licenses)
 
         // Assert
-        nextOpenActivityIs(OssLicensesMenuActivity::class.java)
+        nextOpenActivityIs<OssLicensesMenuActivity>()
     }
 }

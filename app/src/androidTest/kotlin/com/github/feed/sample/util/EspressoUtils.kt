@@ -13,8 +13,8 @@ import android.support.test.espresso.matcher.RootMatchers
 import android.support.test.espresso.matcher.ViewMatchers.*
 import org.hamcrest.Matchers
 
-fun <T : Activity> nextOpenActivityIs(clazz: Class<T>) {
-    intended(hasComponent(clazz.name))
+inline fun <reified T : Activity> nextOpenActivityIs() {
+    intended(hasComponent(T::class.java.name))
 }
 
 fun clickView(@IdRes viewId: Int) {

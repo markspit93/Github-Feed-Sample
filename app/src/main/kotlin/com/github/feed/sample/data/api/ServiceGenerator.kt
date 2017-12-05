@@ -13,13 +13,7 @@ import javax.inject.Singleton
 @Singleton
 class ServiceGenerator @Inject constructor() {
 
-    private val builder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-
-    private lateinit var retrofit: Retrofit
-
-    fun <T : Any> create(endpoint: String, serviceClass: Class<T>): T {
+    fun <T> create(endpoint: String, serviceClass: Class<T>): T {
         val httpClient = OkHttpClient.Builder()
         httpClient.readTimeout(20, TimeUnit.SECONDS)
 
@@ -27,9 +21,12 @@ class ServiceGenerator @Inject constructor() {
             httpClient.addNetworkInterceptor(StethoInterceptor())
         }
 
-        builder.baseUrl(endpoint).client(httpClient.build())
-        retrofit = builder.build()
-
-        return retrofit.create(serviceClass)
+        return Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(endpoint)
+                .client(httpClient.build())
+                .build()
+                .create(serviceClass)
     }
 }

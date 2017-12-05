@@ -27,7 +27,7 @@ class EventListFragment : MvpFragment<EventListContract.View, EventListPresenter
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        presenter.setViewModel(ViewModelProviders.of(this, viewModelFactory).get(EventViewModel::class.java))
+        presenter.setViewModel(ViewModelProviders.of(this, viewModelFactory).get())
 
         if (context!!.hasInternetConnection()) {
             recyclerView.adapter = adapter

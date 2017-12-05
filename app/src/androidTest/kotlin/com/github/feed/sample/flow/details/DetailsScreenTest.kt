@@ -33,6 +33,6 @@ class DetailsScreenTest : BaseInstrumentationTest<MainActivity>(MainActivity::cl
         clickView(R.id.cardEvent)
 
         // Assert
-        nextOpenActivityIs(DetailsActivity::class.java)
+        nextOpenActivityIs<DetailsActivity>()
     }
 }
