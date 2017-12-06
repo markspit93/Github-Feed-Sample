@@ -45,7 +45,7 @@ To run them use the following Gradle tasks:
  * Mockito - https://github.com/mockito/mockito
  * MockWebServer - https://github.com/square/okhttp/tree/master/mockwebserver
  * Retrofit - https://github.com/square/retrofit/
- * RxJava - https://github.com/ReactiveX/RxJava
+ * RxKotlin - https://github.com/ReactiveX/RxKotlin
  * SmoothProgressBar - https://github.com/castorflex/SmoothProgressBar
  * Stetho - https://github.com/facebook/stetho
  
