@@ -1,12 +1,20 @@
 package com.github.feed.sample.ui.common.mvp
 
 import android.arch.lifecycle.ViewModel
+import android.os.Bundle
+import com.github.feed.sample.di.viewmodel.ViewModelFactory
 import com.github.feed.sample.ui.common.BaseFragment
 import javax.inject.Inject
 
 abstract class MvpFragment<VIEW : MvpView, PRESENTER : MvpPresenter<VIEW, VIEWMODEL>, VIEWMODEL: ViewModel> : BaseFragment(), MvpView {
 
     @Inject lateinit var presenter: PRESENTER
+    @Inject lateinit var viewModelFactory: ViewModelFactory
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        presenter.setViewModel(getViewModel(viewModelFactory))
+    }
 
     override fun onStart() {
         super.onStart()
@@ -18,4 +26,6 @@ abstract class MvpFragment<VIEW : MvpView, PRESENTER : MvpPresenter<VIEW, VIEWMO
         presenter.detachView()
         super.onStop()
     }
+
+    abstract fun getViewModel(viewModelFactory: ViewModelFactory): VIEWMODEL
 }

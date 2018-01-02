@@ -79,3 +79,4 @@
 70912:84 checker-compat-qual
 70998:43 javac-shaded
 71043:46 j2objc-annotations
+71091:46 stetho-no-op

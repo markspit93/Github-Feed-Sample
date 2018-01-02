@@ -1,5 +1,6 @@
 package com.github.feed.sample.ui.main
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.annotation.ColorRes
 import android.support.annotation.IdRes
@@ -11,9 +12,9 @@ import android.widget.CheckBox
 import com.github.feed.sample.R
 import com.github.feed.sample.data.*
 import com.github.feed.sample.data.model.Event
+import com.github.feed.sample.di.viewmodel.ViewModelFactory
 import com.github.feed.sample.ext.*
 import com.github.feed.sample.ui.common.mvp.MvpActivity
-import com.github.feed.sample.ui.common.mvp.NoViewModel
 import com.github.feed.sample.ui.details.DetailsActivity
 import com.github.feed.sample.ui.eventlist.EventListFragment
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.jetbrains.anko.intentFor
 
-class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(), MainContract.View {
+class MainActivity : MvpActivity<MainContract.View, MainPresenter, MainViewModel>(), MainContract.View {
 
     companion object {
         private val FRAGMENT_TAG_EVENTS = "fragment_tag_events"
@@ -46,6 +47,10 @@ class MainActivity : MvpActivity<MainContract.View, MainPresenter, NoViewModel>(
         requireNotNull(eventsFragment).eventClick = onEventClicked
 
         setupFilters()
+    }
+
+    override fun getViewModel(viewModelFactory: ViewModelFactory): MainViewModel {
+        return ViewModelProviders.of(this, viewModelFactory).get()
     }
 
     override fun onStart() {

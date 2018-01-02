@@ -12,11 +12,8 @@ import com.github.feed.sample.ext.*
 import com.github.feed.sample.ui.common.mvp.MvpFragment
 import kotlinx.android.synthetic.main.fragment_event_list.*
 import org.jetbrains.anko.support.v4.toast
-import javax.inject.Inject
 
 class EventListFragment : MvpFragment<EventListContract.View, EventListPresenter, EventViewModel>(), EventListContract.View {
-
-    @Inject lateinit var viewModelFactory: ViewModelFactory
 
     private val adapter: EventListAdapter by lazyAndroid { EventListAdapter(eventClick) }
     lateinit var eventClick: (Event) -> Unit
@@ -27,7 +24,6 @@ class EventListFragment : MvpFragment<EventListContract.View, EventListPresenter
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        presenter.setViewModel(ViewModelProviders.of(this, viewModelFactory).get())
 
         if (context!!.hasInternetConnection()) {
             recyclerView.adapter = adapter
@@ -37,6 +33,10 @@ class EventListFragment : MvpFragment<EventListContract.View, EventListPresenter
             progressBar.gone()
             txtNoInternet.visible()
         }
+    }
+
+    override fun getViewModel(viewModelFactory: ViewModelFactory): EventViewModel {
+        return ViewModelProviders.of(this, viewModelFactory).get()
     }
 
     override fun showEvents(events: List<Event>) {

@@ -49,7 +49,7 @@ android {
 }
 
 ext {
-    anko_version = '0.10.3'
+    anko_version = '0.10.4'
 
     supportLibVersion = '27.0.2'
     playServicesVersion = '11.8.0'
