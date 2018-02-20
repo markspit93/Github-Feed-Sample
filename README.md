@@ -40,12 +40,13 @@ To run them use the following Gradle tasks:
  * Android KTX - https://github.com/android/android-ktx
  * Anko - https://github.com/Kotlin/anko
  * Espresso - https://google.github.io/android-testing-support-library/
- * Dagger - https://google.github.io/dagger/
+ * Dagger 2 - https://google.github.io/dagger/
  * Glide - https://github.com/bumptech/glide
  * ObjectBox - https://github.com/objectbox/objectbox-java
  * Mockito - https://github.com/mockito/mockito
  * MockWebServer - https://github.com/square/okhttp/tree/master/mockwebserver
  * Retrofit - https://github.com/square/retrofit/
+ * RxAndroid - https://github.com/ReactiveX/RxAndroid
  * RxKotlin - https://github.com/ReactiveX/RxKotlin
  * SmoothProgressBar - https://github.com/castorflex/SmoothProgressBar
  * Stetho - https://github.com/facebook/stetho
