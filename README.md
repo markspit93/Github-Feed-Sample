@@ -37,6 +37,7 @@ To run them use the following Gradle tasks:
  Libraries
  ======
  
+ * Android KTX - https://github.com/android/android-ktx
  * Anko - https://github.com/Kotlin/anko
  * Espresso - https://google.github.io/android-testing-support-library/
  * Dagger - https://google.github.io/dagger/
