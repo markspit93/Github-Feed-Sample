@@ -25,7 +25,7 @@ import org.jetbrains.anko.intentFor
 class MainActivity : MvpActivity<MainContract.View, MainPresenter, MainViewModel>(), MainContract.View {
 
     companion object {
-        private val FRAGMENT_TAG_EVENTS = "fragment_tag_events"
+        private const val FRAGMENT_TAG_EVENTS = "fragment_tag_events"
     }
 
     private var eventsFragment: EventListFragment? = null

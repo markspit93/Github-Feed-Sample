@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 class DetailsActivity : BaseActivity() {
 
     companion object {
-        private val EXTRA_EVENT = "extra_event"
+        private const val EXTRA_EVENT = "extra_event"
 
         fun createIntent(ctx: Context, event: Event): Intent {
             val intent = Intent(ctx, DetailsActivity::class.java)

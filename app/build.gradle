@@ -8,7 +8,7 @@ apply plugin: 'com.github.ben-manes.versions'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.github.feed.sample"
@@ -50,23 +50,24 @@ android {
 
 ext {
     anko_version = '0.10.4'
+    ktx_version = '0.1'
 
     supportLibVersion = '27.0.2'
     playServicesVersion = '11.8.0'
-    constraintLayoutVersion = '1.1.0-beta4'
-    archComponentsVersion = '1.0.0'
+    constraintLayoutVersion = '1.1.0-beta5'
+    archComponentsVersion = '1.1.0'
     smoothProgressBarVersion = "1.1.0"
     retrofit2Version = '2.3.0'
     rxKotlinVersion = '2.2.0'
-    rxAndroidVersion = '2.0.1'
+    rxAndroidVersion = '2.0.2'
     daggerVersion = '2.14.1'
-    glideVersion = '4.4.0'
+    glideVersion = '4.6.1'
 
     stethoVersion = '1.5.0'
     stethoNoOpVersion = '1.1'
 
     junitVersion = '4.12'
-    mockitoVersion = '2.13.0'
+    mockitoVersion = '2.15.0'
     mockitoKotlinVersion = '1.5.0'
     mockWebServerVersion = '3.9.1'
     supportTestVersion = '1.0.1'
@@ -79,6 +80,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
+
+    implementation "androidx.core:core-ktx:$ktx_version"
 
     implementation "com.android.support:appcompat-v7:$supportLibVersion"
     implementation "com.android.support:cardview-v7:$supportLibVersion"

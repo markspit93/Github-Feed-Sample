@@ -24,19 +24,19 @@ class EventViewModel @Inject constructor(private val eventRepository: EventRepos
         val cachedEventsObservable = Flowable.fromArray(cachedEvents).flatMap { source -> Flowable.fromIterable(source) }
 
         return eventRepository
-                .getEvents()
-                .repeatWhen { observable -> observable.delay(1, TimeUnit.SECONDS) }
-                .subscribeOn(Schedulers.io())
-                .map { response ->
-                    when (response.code()) {
-                        HttpURLConnection.HTTP_FORBIDDEN -> EventsResponse.RateLimitExceeded
-                        else -> EventsResponse.Success(requireNotNull(response.body())
-                                .filter { it.type in allowedEvents })
-                                .apply { cachedEvents.add(this) }
-                    }
+            .getEvents()
+            .repeatWhen { observable -> observable.delay(1, TimeUnit.SECONDS) }
+            .subscribeOn(Schedulers.io())
+            .map { response ->
+                when (response.code()) {
+                    HttpURLConnection.HTTP_FORBIDDEN -> EventsResponse.RateLimitExceeded
+                    else -> EventsResponse.Success(requireNotNull(response.body())
+                        .filter { it.type in allowedEvents })
+                        .apply { cachedEvents.add(this) }
                 }
-                .toFlowable(BackpressureStrategy.BUFFER)
-                .observeOn(AndroidSchedulers.mainThread())
-                .startWith(cachedEventsObservable)
+            }
+            .toFlowable(BackpressureStrategy.BUFFER)
+            .observeOn(AndroidSchedulers.mainThread())
+            .startWith(cachedEventsObservable)
     }
 }

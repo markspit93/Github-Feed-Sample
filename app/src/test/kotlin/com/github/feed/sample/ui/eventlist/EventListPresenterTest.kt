@@ -30,7 +30,7 @@ class EventListPresenterTest : BasePresenterTest<EventListContract.View, EventLi
         setViewModel(EventViewModel(EventViewModel.Config.SUCCESSFUL))
 
         // Act
-        // presenter.onActive() is called automatically
+        // presenter.onViewActive() is called automatically
 
         // Assert
         verify(view).showEvents(any())
@@ -42,7 +42,7 @@ class EventListPresenterTest : BasePresenterTest<EventListContract.View, EventLi
         setViewModel(EventViewModel(EventViewModel.Config.RATE_LIMIT_EXCEEDED))
 
         // Act
-        // presenter.onActive() is called automatically
+        // presenter.onViewActive() is called automatically
 
         // Assert
         verify(view).showLimitErrorMessage()
@@ -54,7 +54,7 @@ class EventListPresenterTest : BasePresenterTest<EventListContract.View, EventLi
         setViewModel(EventViewModel(EventViewModel.Config.GENERIC_ERROR))
 
         // Act
-        // presenter.onActive() is called automatically
+        // presenter.onViewActive() is called automatically
 
         // Assert
         verify(view).showGenericError()

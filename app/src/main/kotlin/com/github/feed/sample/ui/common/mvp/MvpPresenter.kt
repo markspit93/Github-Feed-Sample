@@ -25,24 +25,24 @@ open class MvpPresenter<VIEW : MvpView, VIEWMODEL : ViewModel> {
 
     fun attachView(view: VIEW) {
         this.view = view
-        onActive()
+        onViewActive()
     }
 
     fun detachView() {
         view = null
         compositeDisposable.clear()
-        onInactive()
+        onViewInactive()
     }
 
     fun addObservables(vararg disposable: Disposable) {
         disposable.forEach { compositeDisposable.add(it) }
     }
 
-    open fun onActive() {
+    open fun onViewActive() {
         // override if necessary
     }
 
-    open fun onInactive() {
+    open fun onViewInactive() {
         // override if necessary
     }
 }

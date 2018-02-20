@@ -3,8 +3,8 @@
 buildscript {
     ext {
         androidToolsVersion = '3.0.1'
-        kotlinVersion = '1.2.0'
-        objectboxVersion = '1.3.4'
+        kotlinVersion = '1.2.21'
+        objectboxVersion = '1.4.2'
         ossLicensesVersion = '0.9.1'
         gradleVersionsPlugin = '0.17.0'
 

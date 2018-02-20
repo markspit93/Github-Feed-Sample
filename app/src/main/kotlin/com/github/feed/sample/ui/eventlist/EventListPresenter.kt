@@ -10,7 +10,7 @@ import javax.inject.Inject
 @PerFragment
 class EventListPresenter @Inject constructor() : MvpPresenter<EventListContract.View, EventViewModel>(), EventListContract.Presenter {
 
-    override fun onActive() {
+    override fun onViewActive() {
         val subscriber = getViewModel().getEvents().subscribeBy(
             onNext = {
                 when (it) {
