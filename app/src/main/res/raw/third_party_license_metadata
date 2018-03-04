@@ -34,9 +34,9 @@
 1717:46 support-vector-drawable
 1765:46 support-media-compat
 1813:46 support-compat
-1861:46 livedata
-1909:46 livedata-core
 2005:46 runtime
+1909:46 livedata
+1957:46 livedata-core
 2101:46 common
 2149:46 viewmodel
 2197:92 gifdecoder

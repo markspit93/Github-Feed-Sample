@@ -4,16 +4,9 @@ buildscript {
     ext {
         androidToolsVersion = '3.0.1'
         kotlinVersion = '1.2.21'
-        objectboxVersion = '1.4.2'
+        objectboxVersion = '1.4.3'
         ossLicensesVersion = '0.9.1'
         gradleVersionsPlugin = '0.17.0'
-
-        osName = System.getProperty("os.name").toLowerCase()
-        isLinux = osName.contains("linux")
-        isWindows = osName.contains("windows")
-        is64 = System.getProperty("sun.arch.data.model") == "64"
-        isLinux64 = isLinux && is64
-        isWindows64 = isWindows && is64
     }
 
     repositories {

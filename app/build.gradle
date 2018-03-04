@@ -50,9 +50,9 @@ android {
 
 ext {
     anko_version = '0.10.4'
-    ktx_version = '0.1'
+    ktx_version = '0.2'
 
-    supportLibVersion = '27.0.2'
+    supportLibVersion = '27.1.0'
     playServicesVersion = '11.8.0'
     constraintLayoutVersion = '1.1.0-beta5'
     archComponentsVersion = '1.1.0'
@@ -69,7 +69,7 @@ ext {
     junitVersion = '4.12'
     mockitoVersion = '2.15.0'
     mockitoKotlinVersion = '1.5.0'
-    mockWebServerVersion = '3.9.1'
+    mockWebServerVersion = '3.10.0'
     supportTestVersion = '1.0.1'
     espressoVersion = '3.0.1'
 }
@@ -118,12 +118,12 @@ dependencies {
     implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
 
     // Object Box Test Dependencies
-    // Currently not available for Mac
-    if (isLinux64) {
-        testImplementation "io.objectbox:objectbox-linux:$objectboxVersion"
-    } else if (isWindows64) {
-        testImplementation "io.objectbox:objectbox-windows:$objectboxVersion"
-    }
+    def osName = System.getProperty("os.name").toLowerCase()
+    def objectboxPlatform = osName.contains("linux") ? 'linux' :
+            osName.contains("windows") ? 'windows' :
+            osName.contains("mac") ? 'macos' : 'unsupported-patform'
+
+    testImplementation "io.objectbox:objectbox-$objectboxPlatform:$objectboxVersion"
 
     // Unit Testing Dependencies
     testImplementation "junit:junit:$junitVersion"

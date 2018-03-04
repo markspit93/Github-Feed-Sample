@@ -23,11 +23,10 @@ class DetailsActivity : BaseActivity() {
     companion object {
         private const val EXTRA_EVENT = "extra_event"
 
-        fun createIntent(ctx: Context, event: Event): Intent {
-            val intent = Intent(ctx, DetailsActivity::class.java)
-            intent.putExtra(EXTRA_EVENT, event)
-            return intent
-        }
+        fun createIntent(ctx: Context, event: Event) =
+            Intent(ctx, DetailsActivity::class.java).apply {
+                putExtra(EXTRA_EVENT, event)
+            }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
