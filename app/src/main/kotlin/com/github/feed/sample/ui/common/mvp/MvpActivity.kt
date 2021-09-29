@@ -2,6 +2,7 @@ package com.github.feed.sample.ui.common.mvp
 
 import android.arch.lifecycle.ViewModel
 import android.os.Bundle
+import androidx.lifecycle.ViewModel
 import com.github.feed.sample.di.viewmodel.ViewModelFactory
 import com.github.feed.sample.ui.common.BaseActivity
 import javax.inject.Inject
