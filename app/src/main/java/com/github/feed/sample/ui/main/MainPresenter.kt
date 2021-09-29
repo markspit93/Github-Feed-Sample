@@ -1,10 +1,8 @@
 package com.github.feed.sample.ui.main
 
-import com.github.feed.sample.di.scopes.PerActivity
 import com.github.feed.sample.ui.common.mvp.MvpPresenter
 import javax.inject.Inject
 
-@PerActivity
 class MainPresenter @Inject constructor() : MvpPresenter<MainContract.View, MainViewModel>(), MainContract.Presenter {
 
     override fun loadFilterSelections() {
